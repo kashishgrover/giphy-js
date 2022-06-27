@@ -28,6 +28,7 @@ type Props = {
     noLink?: boolean
     tabIndex?: number
     borderRadius?: number
+    backgroundColor?: string
 } & EventProps
 const defaultProps = Object.freeze({ gutter: 6, user: {} })
 
@@ -152,6 +153,7 @@ class Grid extends Component<Props, State> {
             noLink,
             tabIndex = 0,
             borderRadius,
+            backgroundColor,
         }: Props,
         { gifWidth, gifs, isError, isDoneFetching }: State
     ) {
@@ -177,6 +179,7 @@ class Grid extends Component<Props, State> {
                                 hideAttribution={hideAttribution}
                                 noLink={noLink}
                                 borderRadius={borderRadius}
+                                backgroundColor={backgroundColor}
                             />
                         ))}
                         {!showLoader && gifs.length === 0 && noResultsMessage}
